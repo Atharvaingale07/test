@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flower Categorizer — One Page App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Flower Categorizer</h1>
+      <p class="muted">Add flowers and organize them by category. Data is saved locally in your browser.</p>
+    </header>
+
+    <section class="controls">
+      <form id="flower-form" autocomplete="off">
+        <input id="flower-name" type="text" placeholder="Flower name (e.g. Rose)" required />
+        <select id="flower-category" required>
+          <option value="">Select category</option>
+          <option value="Rose">Rose</option>
+          <option value="Tulip">Tulip</option>
+          <option value="Sunflower">Sunflower</option>
+          <option value="Daisy">Daisy</option>
+          <option value="Orchid">Orchid</option>
+          <option value="Other">Other</option>
+        </select>
+        <button id="add-btn" type="submit">Add Flower</button>
+      </form>
+
+      <div class="filters">
+        <label>Filter:
+          <select id="filter-select">
+            <option value="all">All</option>
+            <option value="Rose">Rose</option>
+            <option value="Tulip">Tulip</option>
+            <option value="Sunflower">Sunflower</option>
+            <option value="Daisy">Daisy</option>
+            <option value="Orchid">Orchid</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <button id="clear-btn" title="Clear all saved flowers">Clear All</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="summary">
+        <span id="total-count">Total: 0</span>
+        <span id="filtered-count"></span>
+      </div>
+      <ul id="flower-list" class="list"></ul>
+    </section>
+
+    <footer class="muted">
+      Tip: Click Edit on an item to modify its name or category. Data is persisted in localStorage.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
